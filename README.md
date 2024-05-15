@@ -1,6 +1,6 @@
 # ESP-IDF program for car CAN bus decoding
 
-This program reads can messages and sends them over serial so that it can be parsed by this software from adamtheone https://github.com/adamtheone/canDrive.
+This program reads can messages and sends them over serial so that it can be parsed by this software from adamtheone https://github.com/adamtheone/canDrive. Written for ESP32 S3.
 
 ## Functions
 - Reading CAN bus in both human-readable and machine readable form
