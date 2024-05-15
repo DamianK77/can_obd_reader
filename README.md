@@ -1,32 +1,9 @@
-# _Sample project_
+# ESP-IDF program for car CAN bus decoding
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+This program reads can messages and sends them over serial so that it can be parsed by this software from adamtheone https://github.com/adamtheone/canDrive.
 
-This is the simplest buildable example. The example is used by command `idf.py create-project`
-that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
+## Functions
+- Reading CAN bus in both human-readable and machine readable form
 
-
-
-## How to use example
-We encourage the users to use the example as a template for the new projects.
-A recommended way is to follow the instructions on a [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project).
-
-## Example folder contents
-
-The project **sample_project** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
-
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt`
-files that provide set of directives and instructions describing the project's source files and targets
-(executable, library, or both). 
-
-Below is short explanation of remaining files in the project folder.
-
-```
-├── CMakeLists.txt
-├── main
-│   ├── CMakeLists.txt
-│   └── main.c
-└── README.md                  This is the file you are currently reading
-```
-Additionally, the sample project contains Makefile and component.mk files, used for the legacy Make based build system. 
-They are not used or needed when building with CMake and idf.py.
+## How to use
+I am using a SN65HVD230 transciever to send the messages. it should work effortlessly as long as you connect to the right pins on your car's manufacturer's OBD2 connector. I added a definition for can timings for Opel Low Speed CAN Bus as it was needed to decode steering wheel buttons which communicate using the low speed can bus (pin 1 of obd plug on my Vectra C). 
